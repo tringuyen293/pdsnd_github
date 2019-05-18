@@ -180,8 +180,7 @@ def user_stats(df, city):
 
 def display_data(df):
     """
-    Display contents of the CSV file to the display as requested by
-    the user.
+    Display details data for user request regarding 3 cities.
     """
 
     start_loc = 0
