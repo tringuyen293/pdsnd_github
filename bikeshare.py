@@ -12,11 +12,14 @@ def get_filters():
 
     Returns:
         (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) month - name of the month to filter by,
+        or "all" to apply no month filter
+        (str) day - name of the day of week to filter by,
+        or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Please select one city in lower case
+    # get user input for city (chicago, new york city, washington).
+    HINT: Please select one city in lower case
     city = input("Please input city name: ").lower()
 
     while city not in ['chicago', 'new york city', 'washington']:
@@ -35,12 +38,15 @@ def get_filters():
 
 def load_data(city, month, day):
     """
-    Loads data for the specified city and filters by month and day if applicable.
+    Loads data for the specified city and
+    filters by month and day if applicable.
 
     Args:
         (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) month - name of the month to filter by,
+        or "all" to apply no month filter
+        (str) day - name of the day of week to filter by,
+        or "all" to apply no day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
@@ -52,7 +58,8 @@ def load_data(city, month, day):
 
     # extract month and day of week from Start Time to create new columns
     df['month'] = df['Start Time'].apply(lambda x: x.month)
-    df['day_of_week'] = df['Start Time'].apply(lambda x: x.strftime('%A').lower())
+    df['day_of_week'] = df['Start Time']
+                        .apply(lambda x: x.strftime('%A').lower())
 
 
     # filter by month if applicable
@@ -212,7 +219,8 @@ def main():
         user_stats(df, city)
         display_data(df)
 
-        restart = input('\nWould you like to explore the data again? Enter yes or no.\n')
+        restart = input('\nWould you like to explore the data again? \
+        Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
